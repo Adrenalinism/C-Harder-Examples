@@ -10,8 +10,9 @@
  */
 #include <iostream>
 
-int main ()
+inline
+std::ostream& operator << (std::ostream& strm, const Fraction& f)
 {
-    // copy all standard input to standard output
-    std::cout << std::cin.rdbuf();
+    strm << f.numerator() << '/' << f.denominator();
+    return strm;
 }

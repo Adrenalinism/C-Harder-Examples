@@ -9,9 +9,24 @@
  * warranty, and with no claim as to its suitability for any purpose.
  */
 #include <iostream>
+#include "ignore.hpp"
 
-int main ()
+int main()
 {
-    // copy all standard input to standard output
-    std::cout << std::cin.rdbuf();
+    int i;
+    std::cout << "read int and ignore rest of the line" << std::endl;
+    std::cin >> i;
+
+    // ignore the rest of the line
+    std::cin >> ignoreLine;
+
+    std::cout << "int: " << i << std::endl;
+
+    std::cout << "read int and ignore two lines" << std::endl;
+    std::cin >> i;
+
+    // ignore two lines
+    std::cin >> ignoreLine >> ignoreLine;
+
+    std::cout << "int: " << i << std::endl;
 }
